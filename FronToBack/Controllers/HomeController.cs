@@ -23,7 +23,7 @@ namespace FronToBack.Controllers
             homeVM.SliderContent = _context.SliderContents.FirstOrDefault();
             homeVM.Categories = _context.Categories.ToList();
             homeVM.Products = _context.Products.ToList();
-            homeVM.FiorelloMiddles = _context.FiorelloMiddles.ToList();
+            //homeVM.FiorelloMiddles = _context.FiorelloMiddles.ToList();
 
             return View(homeVM);
         }

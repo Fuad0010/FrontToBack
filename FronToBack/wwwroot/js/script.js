@@ -14,6 +14,10 @@ $(document).ready(function () {
         $('.mobile-navbar').addClass("active");
 
     })
+    $(document).on('click', '#loadMore', function () {
+        alert("asd");
+
+    })
 
     $(document).on('click', '.mobile-navbar ul li a', function () {
         if ($(this).children('i').hasClass('fa-caret-right')) {
