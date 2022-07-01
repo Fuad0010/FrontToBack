@@ -23,23 +23,27 @@ namespace FronToBack.Controllers
         }
         public IActionResult LoadMore()
         {
-            List<Product> products = _context.Products.Skip(2).Take(2).ToList();
-            List<ProductReturnVM> productReturnVMs = new List<ProductReturnVM>();
+            //List<Product> products = _context.Products.Skip(2).Take(2).ToList();
 
-            foreach (var item in products)
-            {
-                ProductReturnVM productReturnVM = new ProductReturnVM();
-                productReturnVM.Id = item.Id;
-                productReturnVM.Name = item.Name;
-                productReturnVM.Price = item.Price;
-                productReturnVM.Category= item.Category;
-                productReturnVM.CategoryId= item.CategoryId;
-                productReturnVMs.Add(productReturnVM);
+            //List
 
 
+            //List<ProductReturnVM> productReturnVMs = new List<ProductReturnVM>();
 
-            }
-            return Json(products);
+            //foreach (var item in products)
+            //{
+            //    ProductReturnVM productReturnVM = new ProductReturnVM();
+            //    productReturnVM.Id = item.Id;
+            //    productReturnVM.Name = item.Name;
+            //    productReturnVM.Price = item.Price;
+            //    productReturnVM.Category= item.Category;
+            //    productReturnVM.CategoryId= item.CategoryId;
+            //    productReturnVMs.Add(productReturnVM);
+
+
+
+            //}
+            return View();
         }
     }
 }
