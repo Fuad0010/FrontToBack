@@ -19,13 +19,23 @@ namespace FronToBack.Controllers
         public IActionResult Index()
         {
             List<Product> products = _context.Products.Take(2).Include(p=>p.Category).ToList();
+            ViewBag.ProductCount = _context.Products.Count();
             return View(products);
         }
-        public IActionResult LoadMore()
+        public IActionResult LoadMore(int skip)
         {
-            //List<Product> products = _context.Products.Skip(2).Take(2).ToList();
+            List<Product> products = _context.Products.Skip(skip).Take(2).Include(p=>p.Category).ToList();
 
-            //List
+            #region Json
+
+            //List<ProductReturnVM> products = _context.Products.Select(p => new ProductReturnVM
+            //{
+            //    Id=p.Id,
+            //    Name=p.Name,
+            //    Price=p.Price,
+            //    CategoryId=p.CategoryId,
+            //    Category=p.Category.Name
+            //}).ToList();
 
 
             //List<ProductReturnVM> productReturnVMs = new List<ProductReturnVM>();
@@ -39,11 +49,10 @@ namespace FronToBack.Controllers
             //    productReturnVM.Category= item.Category;
             //    productReturnVM.CategoryId= item.CategoryId;
             //    productReturnVMs.Add(productReturnVM);
-
-
-
             //}
-            return View();
+            #endregion
+
+            return PartialView("_LoadMorePartial",products);
         }
     }
 }

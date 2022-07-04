@@ -125,3 +125,4 @@ C:\Users\DEZHURIK\Desktop\ASP\HomeWorks\FronToBack\FronToBack\bin\Debug\netcorea
 C:\Users\DEZHURIK\Desktop\ASP\HomeWorks\FronToBack\FronToBack\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\DEZHURIK\Desktop\ASP\HomeWorks\FronToBack\FronToBack\obj\Debug\netcoreapp3.1\Razor\Views\Home\Detail.cshtml.g.cs
 C:\Users\DEZHURIK\Desktop\ASP\HomeWorks\FronToBack\FronToBack\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\DEZHURIK\Desktop\ASP\HomeWorks\FronToBack\FronToBack\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoadMorePartial.cshtml.g.cs

@@ -14,10 +14,6 @@ $(document).ready(function () {
         $('.mobile-navbar').addClass("active");
 
     })
-    $(document).on('click', '#loadMore', function () {
-        alert("asd");
-
-    })
 
     $(document).on('click', '.mobile-navbar ul li a', function () {
         if ($(this).children('i').hasClass('fa-caret-right')) {
@@ -27,6 +23,24 @@ $(document).ready(function () {
             $(this).children('i').removeClass('fa-sort-down').addClass('fa-caret-right')
         }
         $(this).parent().next().slideToggle();
+    })
+
+    //loadmore
+    let skip = 2;
+    $(document).on("click", "#loadMore", () => {
+        const productList = $("#productList");
+        let productCount = $("#productCount").val();
+        $.ajax({
+            url: "/product/loadMore?skip="+skip,
+            method: "get",
+            success: function (res) {
+                productList.append(res);
+                skip += 2;
+                if (skip >= productCount) {
+                    $("#loadMore").remove();
+                }
+            }
+        })
     })
 
     // SLIDER
