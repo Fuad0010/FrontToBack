@@ -8,7 +8,7 @@
             <div class="container">
             </div>
             <div class="row"id="productList">
-                @foreach (var item in Model)
+                @*@foreach (var item in Model)
                 {
                     <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
                         <div class="product-item text-center" data-id="@item.Category.Name.ToLower();">
@@ -26,7 +26,8 @@
                             </div>
                         </div>
                     </div>
-                }    
+                }*@    
+                @await Component.InvokeAsync("Product");    
             </div>
             <div class="row justify-content-center">
                 <a id="loadMore" class="btn btn-primary" style="color:white;">Load more...</a>

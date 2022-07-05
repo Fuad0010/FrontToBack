@@ -42,6 +42,18 @@ $(document).ready(function () {
             }
         })
     })
+    // Search
+    $(document).on("keyup", "#input-search", function () {
+        let inputValue = $(this).val();
+        $("#searchList li").slice(1).remove();
+        $.ajax({
+            url: "home/searchProduct?search=" + inputValue,
+            method: "get",
+            success: function (res) {
+                $("#searchList").append(res);
+            }
+        })
+    })
 
     // SLIDER
 
