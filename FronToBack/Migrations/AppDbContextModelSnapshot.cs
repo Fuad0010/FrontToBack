@@ -57,30 +57,6 @@ namespace FronToBack.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("FronToBack.Models.FiorelloMiddle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Desc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IconUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tittle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VideoUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FiorelloMiddles");
-                });
-
             modelBuilder.Entity("FronToBack.Models.Product", b =>
                 {
                     b.Property<int>("Id")

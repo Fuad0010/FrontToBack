@@ -15,6 +15,10 @@
     <Compile Remove="Migrations\20220622115545_addSliderTable.Designer.cs" />
     <Compile Remove="Migrations\20220622121526_addSliderContent.cs" />
     <Compile Remove="Migrations\20220622121526_addSliderContent.Designer.cs" />
+    <Compile Remove="Migrations\20220624104039_addCategoryProductTable.cs" />
+    <Compile Remove="Migrations\20220624104039_addCategoryProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20220705144100_addbio.cs" />
+    <Compile Remove="Migrations\20220705144100_addbio.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

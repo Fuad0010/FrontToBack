@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace FronToBack.ViewComponents
 {
-    public class HeaderViewComponent:ViewComponent
+    public class FooterViewComponent:ViewComponent
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext  _context;
 
-        public HeaderViewComponent(AppDbContext context)
+        public FooterViewComponent(AppDbContext context)
         {
             _context = context;
         }
+
         public async Task<IViewComponentResult> InvokeAsync()
         {
             Bio bio = _context.Bios.FirstOrDefault();

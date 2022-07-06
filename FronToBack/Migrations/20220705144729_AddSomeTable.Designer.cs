@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FronToBack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220624104039_addCategoryProductTable")]
-    partial class addCategoryProductTable
+    [Migration("20220705144729_AddSomeTable")]
+    partial class AddSomeTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,30 @@ namespace FronToBack.Migrations
                 .HasAnnotation("ProductVersion", "3.1.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("FronToBack.Models.Bio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LinkedIn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bios");
+                });
 
             modelBuilder.Entity("FronToBack.Models.Category", b =>
                 {
@@ -99,7 +123,7 @@ namespace FronToBack.Migrations
 
             modelBuilder.Entity("FronToBack.Models.Product", b =>
                 {
-                    b.HasOne("FronToBack.Models.Category", null)
+                    b.HasOne("FronToBack.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
